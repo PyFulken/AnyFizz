@@ -5,6 +5,10 @@ def fizzbuzz(divisors, words, length):
     :param length: Int to determine the size of the output.
     :return: None
     """
+    if len(divisors) != len(words):
+        raise IndexError("The number of divisors and words do not match.")
+    if length < 1:
+        raise ValueError("Length must be an integer above 1")
     for i in range(1, length+1):
         output = ""
         iterator = 0
@@ -17,4 +21,3 @@ def fizzbuzz(divisors, words, length):
         if output == "":
             output = i
         print(output)
-
